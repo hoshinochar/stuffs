@@ -1,4 +1,4 @@
-# stuffs
+# STUFFS
 
 ## Project setup
 ```
