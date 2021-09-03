@@ -7,6 +7,13 @@ yarn run build
 cd dist
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
+git config --global user.name "char"
+git config --global user.email "hoshinochar@gmail.com"
+git config --global credential.username "hoshinochar"
+git config user.name "char"
+git config user.email "hoshinochar@gmail.com"
+git config credential.username "hoshinochar"
+
 git init
 git add -A
 git commit -m 'deploy'

@@ -12,7 +12,7 @@
 
     <!-- RIGHT SIDE -->
     <h2 id="game-title">char's deleted affair</h2>
-    <h2 id="game-subtitle">madlib ed.</h2>
+    <h2 id="game-subtitle">MAD LIBS ED.</h2>
     <div id="chatbox">
       <h3 id="chat-title">— chat —</h3>
     </div>
@@ -57,9 +57,9 @@ export default {
 
   #game-subtitle {
     position: absolute;
-    left: 1670px;
+    left: 1690px;
     top: 110px;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   #chatbox {
