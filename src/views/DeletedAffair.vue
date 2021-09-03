@@ -8,6 +8,15 @@
         src="https://media.discordapp.net/attachments/708164441073778708/883155840629100614/char-white.png?width=742&height=1395"
         id="silhouette"
       ></v-img>
+
+      <!-- FILES -->
+      <File 
+        number="01"
+        top="900px"
+        left="500px"/>
+
+
+      <!-- CONTROLS -->
     </div>
 
     <!-- RIGHT SIDE -->
@@ -21,9 +30,13 @@
 
 <script>
 // @ is an alias to /src
+import File from '@/components/File.vue'
 
 export default {
   name: 'DeletedAffair',
+  components: {
+    File,
+  },
 }
 </script>
 
