@@ -14,11 +14,11 @@
         number="01"
         top="900px"
         left="500px"
-        :complete="(file01a.length > 0 && file01b.length > 0 && file01c.length > 0)"
+        :complete="file01a.length > 0 && file01b.length > 0 && file01c.length > 0"
         v-on:reset="reset('01')"
         v-on:toggle="showfile01story = !showfile01story">
         <transition name="slide">
-          <section v-if="showfile01story" class="story">
+          <section v-if="showfile01story">
             After her one year anniversary, Char traveled to Axis to take a break. She decided to further her education by attending the University of <strong>{{ file01a || '_______' }}</strong>. During that time, she bought new combat boots and tested them out by stepping on <strong>{{ file01b || '_______' }}</strong>.  Something <strong>{{ file01c || '_______' }}</strong> Something.
           </section>
         </transition>
@@ -42,6 +42,35 @@
         </section>
       </File>
 
+      <!-- LOG -->
+      <v-dialog
+        v-model="log"
+        hide-overlay
+        width="1200">
+        <v-card
+          width="1200"
+          height="1000">
+
+          <v-btn
+            @click="log = false"
+            class="x-btn" 
+            icon>
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+
+          <v-card-title class="text-h4">
+            LOG
+          </v-card-title>
+
+          <v-card-text>
+            <section v-if="file01a.length > 0 && file01b.length > 0 && file01c.length > 0">
+              After her one year anniversary, Char traveled to Axis to take a break. She decided to further her education by attending the University of <strong>{{ file01a }}</strong>. During that time, she bought new combat boots and tested them out by stepping on <strong>{{ file01b }}</strong>.  Something <strong>{{ file01c }}</strong> Something.
+            </section>
+
+          </v-card-text>
+        </v-card>
+
+      </v-dialog>
 
       <!-- CONTROLS -->
       <v-card-actions class="actions">
@@ -55,6 +84,7 @@
         <v-btn
           color="primary"
           text
+          @click="log = true"
         >
           LOG
         </v-btn>
@@ -81,6 +111,8 @@ export default {
   },
   data () {
     return {
+      log: false,
+
       // SHOW STORY (NOTE: THIS IS HORRIBLE DON'T DO THIS)
       showfile01story: false,
 
@@ -99,6 +131,9 @@ export default {
           this.file01c = '';
           break;
         default:
+          this.file01a = '';
+          this.file01b = '';
+          this.file01c = '';
       }
     },
   },
@@ -138,6 +173,20 @@ export default {
     left: 1690px;
     top: 110px;
     font-size: 2rem;
+  }
+
+  .v-card {
+    position: absolute !important;
+    left: 60px;
+    top: 60px;
+  }
+
+  .v-card__text {
+    font-size: 1.5rem !important;
+  }
+
+  b, strong {
+    color: white;
   }
 
   .actions {

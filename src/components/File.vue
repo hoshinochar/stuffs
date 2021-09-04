@@ -10,12 +10,10 @@
     <v-dialog
       v-model="dialog"
       hide-overlay
-      width="1200"
-      class="dialog">
+      width="1200">
       <v-card
         width="1200"
-        height="1000"
-        class="card">
+        height="1000">
 
         <v-btn
           @click="dialog = false"
@@ -155,6 +153,10 @@ export default {
 
   .v-input {
     width: 200px;
+  }
+
+  b, strong {
+    color: white;
   }
   
   .slide-enter-active {
