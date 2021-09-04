@@ -183,7 +183,7 @@ export default {
     height: 1005px;
     width: 600px;
     z-index: 11;
-    background-color: #1E1E1E;
+    background-color: #161616;
   }
   
   .slide-enter-active {
