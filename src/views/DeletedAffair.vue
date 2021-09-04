@@ -219,7 +219,7 @@
 
           <v-card-text>
             <section v-if="file01a.length > 0 && file01b.length > 0 && file01c.length > 0" class="ma-8">
-              After her one year anniversary, Char traveled to Axis to take a break. She decided to further her education by attending the University of <strong>{{ file01a }}</strong>. During that time, she bought new combat boots and tested them out by stepping on <strong>{{ file01b }}</strong>.  Something <strong>{{ file01c }}</strong> Something.
+              After her one-year anniversary, Char traveled to Axis for a short break. Deciding to further her education, she registered at the University of <strong>{{ file01a }}</strong>. It was at this time that she bought new combat boots that were tested by stepping on <strong>{{ file01b }}</strong>. The experience was described as <strong>{{ file01c }}</strong> in her recollections.
             </section>
 
             <section v-if="file02a.length > 0 && file02b.length > 0 && file02c.length > 0" class="ma-8">
