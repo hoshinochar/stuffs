@@ -13,7 +13,7 @@
       <File 
         number="01"
         top="900px"
-        left="460px"
+        left="470px"
         :complete="file01a.length > 0 && file01b.length > 0 && file01c.length > 0"
         v-on:reset="reset('01')"
         v-on:toggle="showfile01story = !showfile01story">
