@@ -9,7 +9,8 @@
 
     <v-dialog
       v-model="dialog"
-      hide-overlay>
+      hide-overlay
+      width="0">
       <v-card
         width="1200"
         height="1000">
