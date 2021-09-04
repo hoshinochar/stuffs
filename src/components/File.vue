@@ -65,6 +65,19 @@
           </v-btn>
         </v-card-actions>
       </v-card>
+      <v-card
+        v-if="reveal"
+        width="1200"
+        height="1000"
+        style="z-index: 10; background-color: #00FF00;"> 
+        <v-btn
+          @click="reveal = false"
+          class="x-btn" 
+          icon>
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <div v-if="arms" class="not-green"></div>
+      </v-card>
     </v-dialog>
   </div>
 </template>
@@ -91,6 +104,10 @@ export default {
     },
     complete: {
       type: Boolean,
+    },
+    arms: {
+      type: Boolean,
+      default: false,
     }
   },
   methods: {
@@ -157,6 +174,16 @@ export default {
 
   b, strong {
     color: white;
+  }
+
+  .not-green {
+    position: absolute;
+    left: 300px;
+    top: 0;
+    height: 1005px;
+    width: 600px;
+    z-index: 11;
+    background-color: #1E1E1E;
   }
   
   .slide-enter-active {

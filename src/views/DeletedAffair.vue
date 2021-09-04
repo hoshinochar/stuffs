@@ -110,6 +110,7 @@
         number="04"
         top="480px"
         left="670px"
+        arms
         :complete="file04a.length > 0 && file04b.length > 0 && file04c.length > 0"
         v-on:reset="reset('04')"
         v-on:toggle="showfile04story = !showfile04story">
