@@ -152,7 +152,7 @@ export default {
   }
 
   .v-input {
-    width: 200px;
+    width: 250px;
   }
 
   b, strong {
