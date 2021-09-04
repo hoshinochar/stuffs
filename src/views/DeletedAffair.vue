@@ -231,7 +231,7 @@
             </section>
 
             <section v-if="file04a.length > 0 && file04b.length > 0 && file04c.length > 0" class="ma-8">
-              Later, she ventured to the mountains by <strong>{{ file03a }}</strong>. The journey was long and perilous. In the mountains she encountered all sorts of beasts, including a mythical <strong>{{ file03b }}</strong>. It was only through her attempts to build a <strong>{{ file03c }}</strong> that she was able to escape, but she had lost a piece of this mobile suit in the experience.
+              Weary from her travel, Char eventually came back to her home in Tsunderia. However, things were not as she left them. <strong>{{ file04a }}</strong>  had invaded during her absence and it was only with the power of <strong>{{ file04b }}</strong> that her and her friends were able to ward them. The day of this battle will forever be marked as <strong>{{ file04c }}</strong> Wednesday.
             </section>
 
             <section v-if="file05a.length > 0 && file05b.length > 0 && file05c.length > 0" class="ma-8">
