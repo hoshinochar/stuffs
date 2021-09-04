@@ -13,12 +13,52 @@
       <File 
         number="01"
         top="900px"
-        left="500px">
-        unga bunga
+        left="500px"
+        :complete="(file01a.length > 0 && file01b.length > 0 && file01c.length > 0)"
+        v-on:reset="reset('01')"
+        v-on:toggle="showfile01story = !showfile01story">
+        <transition name="slide">
+          <section v-if="showfile01story" class="story">
+            After her one year anniversary, Char traveled to Axis to take a break. She decided to further her education by attending the University of <strong>{{ file01a || '_______' }}</strong>. During that time, she bought new combat boots and tested them out by stepping on <strong>{{ file01b || '_______' }}</strong>.  Something <strong>{{ file01c || '_______' }}</strong> Something.
+          </section>
+        </transition>
+
+        <section class="mt-10">
+          <v-text-field
+            label="Type of Food"
+            v-model="file01a"
+            outlined
+          ></v-text-field>
+          <v-text-field
+            label="Tsunderia Member"
+            v-model="file01b"
+            outlined
+          ></v-text-field>
+          <v-text-field
+            label="Something"
+            v-model="file01c"
+            outlined
+          ></v-text-field>
+        </section>
       </File>
 
 
       <!-- CONTROLS -->
+      <v-card-actions class="actions">
+        <v-btn
+          color="error"
+          text
+          @click="reset()"
+        >
+          RESET
+        </v-btn>
+        <v-btn
+          color="primary"
+          text
+        >
+          LOG
+        </v-btn>
+      </v-card-actions>
     </div>
 
     <!-- RIGHT SIDE -->
@@ -38,6 +78,29 @@ export default {
   name: 'DeletedAffair',
   components: {
     File,
+  },
+  data () {
+    return {
+      // SHOW STORY (NOTE: THIS IS HORRIBLE DON'T DO THIS)
+      showfile01story: false,
+
+      // FILES
+      file01a: '',
+      file01b: '',
+      file01c: '',
+    }
+  },
+  methods: {
+    reset (file) {
+      switch(file) {
+        case '01':
+          this.file01a = '';
+          this.file01b = '';
+          this.file01c = '';
+          break;
+        default:
+      }
+    },
   },
 }
 </script>
@@ -77,6 +140,12 @@ export default {
     font-size: 2rem;
   }
 
+  .actions {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
   #chatbox {
     position: absolute;
     left: 1280px;
@@ -93,5 +162,6 @@ export default {
       margin-top: 20px;
     }
   }
+
 }
 </style>

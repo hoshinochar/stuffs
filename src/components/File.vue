@@ -9,6 +9,7 @@
 
     <v-dialog
       v-model="dialog"
+      hide-overlay
       width="1200"
       class="dialog">
       <v-card
@@ -23,7 +24,7 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
 
-        <v-card-title class="text-h5">
+        <v-card-title class="text-h4">
           FILE:{{ number }}
         </v-card-title>
 
@@ -36,6 +37,13 @@
           <v-btn
             color="warning"
             text
+            @click="$emit('toggle')"
+          >
+            SHOW/HIDE STORY
+          </v-btn>
+          <v-btn
+            color="error"
+            text
             @click="clickReset"
           >
             RESET
@@ -43,9 +51,19 @@
           <v-btn
             color="primary"
             text
-            @click="complete = true"
+            @click="reveal = true"
+            :disabled="!complete"
           >
-            COMPLETE
+            REVEAL
+          </v-btn>
+        </v-card-actions>
+        <v-card-actions class="actions-done">
+          <v-btn
+            color="success"
+            text
+            @click="dialog = false"
+          >
+            DONE
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -59,7 +77,7 @@ export default {
   data () {
     return {
       dialog: false,
-      complete: true,
+      reveal: false,
     }
   },
   props: {
@@ -72,6 +90,9 @@ export default {
     },
     left: {
       type: String,
+    },
+    complete: {
+      type: Boolean,
     }
   },
   methods: {
@@ -116,10 +137,55 @@ export default {
     top: 60px;
   }
 
+  .v-card__text {
+    font-size: 1.5rem !important;
+  }
+
   .actions {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .actions-done {
     position: absolute;
     bottom: 0px;
     right: 0px;
   }
+
+  .v-input {
+    width: 200px;
+  }
   
+  .slide-enter-active {
+   -moz-transition-duration: 0.3s;
+   -webkit-transition-duration: 0.3s;
+   -o-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -moz-transition-timing-function: ease-in;
+   -webkit-transition-timing-function: ease-in;
+   -o-transition-timing-function: ease-in;
+   transition-timing-function: ease-in;
+  }
+
+  .slide-leave-active {
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+
+  .slide-enter-to, .slide-leave {
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  .slide-enter, .slide-leave-to {
+    overflow: hidden;
+    max-height: 0;
+  }
 </style>
