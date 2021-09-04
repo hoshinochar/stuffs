@@ -223,7 +223,7 @@
             </section>
 
             <section v-if="file02a.length > 0 && file02b.length > 0 && file02c.length > 0" class="ma-8">
-              Following this period, Char decided to challenge herself further by honing her skills in <strong>{{ file02a }}</strong> and watermelon crushing. Like an <strong>{{ file02b }}</strong> madman, she squeezed watermelons day in and day out. The results were <strong>{{ file02c }}</strong> and resulted in the destructon of many melons.
+              Following this period, Char decided to challenge herself further by honing her skills in <strong>{{ file02a }}</strong> and watermelon crushing. Like a(n) <strong>{{ file02b }}</strong> madman, she squeezed watermelons day in and day out. The results were <strong>{{ file02c }}</strong> and resulted in the destructon of many melons.
             </section>
 
             <section v-if="file03a.length > 0 && file03b.length > 0 && file03c.length > 0" class="ma-8">
