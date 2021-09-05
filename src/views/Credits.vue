@@ -199,6 +199,34 @@
 
           </v-card>
         </v-hover>
+
+        <v-hover v-slot="{ hover }">
+          <v-card
+            width="600"
+            height="150"
+            @click="redirect('tsunderia_us');"
+            :elevation="hover ? 12 : 2"
+            :class="{ 'on-hover': hover, 'ma-6': true }">
+            <v-card-title class="credit-title">
+              acacia group cover
+            </v-card-title>
+            <v-card-title class="credit-subtitle">
+              tsunderia & friends
+            </v-card-title>
+            
+            <v-img
+              max-width="600"
+              max-height="150"
+              src="https://media.discordapp.net/attachments/837904599192305745/883773650870886470/thumbnail_again.png?width=1192&height=671"
+            ></v-img>
+            <img
+              max-width="50"
+              max-height="50"
+              class="avatars"
+              src="https://media.discordapp.net/attachments/708164441073778708/883872336263122984/f1Dxeock_400x400.png"/>
+
+          </v-card>
+        </v-hover>
       </div>
 
 
