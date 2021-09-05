@@ -16,7 +16,6 @@
             max-height="300"
             contain
             src="https://media.discordapp.net/attachments/708164441073778708/883155840629100614/char-white.png?width=742&height=1395"
-            id="silhouette"
           ></v-img>
           <v-card-title
             class="screaming">
@@ -37,7 +36,6 @@
             max-height="300"
             contain
             src="https://media.discordapp.net/attachments/708164441073778708/883851431847817236/unknown.png"
-            id="silhouette"
           ></v-img>
           <v-card-title
             class="screaming2">
@@ -73,5 +71,5 @@
 
 .v-card:not(.on-hover) {
   opacity: 0.6;
- }
+}
 </style>
